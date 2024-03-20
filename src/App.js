@@ -6,6 +6,13 @@ import '../src/css/style.css'
 import Topbar from "./Components/Topbar";
 import Mobilemenu from "./Components/Mobilemenu";
 import Hero from "./Components/Hero";
+import About from "./Components/About";
+import Services from "./Components/Services";
+import Portfolio from "./Components/Portfolio";
+import Video from "./Components/Video";
+import Testimonials from "./Components/Testimonials";
+import News from "./Components/News";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -21,6 +28,13 @@ function App() {
       <Topbar/>
       <Mobilemenu/>
       <Hero/>
+      <About/>
+      <Services/>
+      <Portfolio/>
+      <Video/>
+      <Testimonials/>
+      <News/>
+      <Contact/>
       </div>
       {/* Wrapper All */}
     </div>
