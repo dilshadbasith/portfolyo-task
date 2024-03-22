@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../css/colors.css'
 import '../css/plugins.css'
 import '../css/style.css'
 import star from '../img/svg/star.svg'
 import quote from '../img/svg/quote.svg'
 import about2 from '../img/about/2.jpg'
+import { myContext } from '../Context'
 // import about1 from '../img/about/1.jpg'
 // import about3 from '../img/about/3.jpg'
 
 function Testimonials() {
+	const {user}=useContext(myContext)
+	
+	const userTestimonials=user?.testimonials
+	
   return (
     <div class="ryker_tm_section">
 		<div class="ryker_tm_testimonials">
@@ -35,6 +40,8 @@ function Testimonials() {
 			<div class="container">
 				<div class="testimonials_list">
 					<div>
+						{userTestimonials?.map((item)=>(
+
 						<div class="wr_in item">
 							<div class="list_inner">
 								<ul class="stars">
@@ -45,18 +52,19 @@ function Testimonials() {
 									<li><img class="svg" src={star} alt="" /></li>
 								</ul>
 								<div class="text">
-									<p>I rarely like to write reviews, but the developer truly deserve a standing ovation for their customer support, customisation and most importantly, friendliness and professionalism. Very satisfying!!!</p>
+									<p>{item?.review}</p>
 								</div>
 								<div >
-									<h3 class="author"><span>Albert Einstein</span></h3>
-									<h3 class="job"><span>Freelancer</span></h3>
+									<h3 class="author"><span>{item?.name}</span></h3>
+									<h3 class="job"><span>{item?.position}</span></h3>
 								</div>
 								<div class="avatar">
-									<div class="image" style={{ backgroundImage: `url(${about2})` }}></div>
+									<img style={{height:"8rem"}} src={item?.image?.url} alt='no image'/>
 								</div>
 								<img class="svg myquote" src={quote} alt="" />
 							</div>
 						</div>
+						))}
 						{/* <div class="wr_in item">
 							<div class="list_inner">
 								<ul class="stars">

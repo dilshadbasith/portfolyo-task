@@ -1,23 +1,34 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import '../css/colors.css';
 import '../css/plugins.css';
 import '../css/style.css';
 import thumb1 from '../img/thumbs/1-1.jpg'
 import about2 from '../img/about/2.jpg'
 import sign from '../img/signature.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { myContext } from '../Context';
 
 function About() {
+
+  const {user}=useContext(myContext)
+
+  const userInfo=user?.about
+  
+  useEffect(()=>{
+    AOS.init({duration:1000})
+  },[])
   return (
     <div className="ryker_tm_section" id="about">
       <div className="ryker_tm_about">
         <div className="container">
           <div className="about_inner">
-            <div className="left wow fadeInLeft" data-wow-duration="1.5s">
+            <div className="left" data-aos="fade-right">
               <div className="image">
                 <img src={thumb1} alt="" />
-                <div className="main" style={{ backgroundImage: `url(${about2})` }}></div>
+                <div className="main" style={{ backgroundImage: `url(${userInfo?.avatar?.url})` }}></div>
                 <div className="experience">
-                  <h3 className="year" style={{ backgroundImage: `url(${about2})` }}>7</h3>
+                  <h3 className="year" style={{ backgroundImage: `url(${userInfo?.avatar?.url})` }}>7</h3>
                   <div id="circle">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enableBackground="new 0 0 300 300" xmlSpace="preserve">
                       <defs>
@@ -35,13 +46,13 @@ function About() {
                 </div>
               </div>
             </div>
-            <div className="right wow fadeInRight" data-wow-duration="1.5s">
+            <div className="right" data-aos="fade-left">
               <div className="ryker_tm_title">
                 <span>About Me</span>
-                <h3>A passionate Senior Designer and Front-End Developer based In NYC, USA</h3>
+                <h3>{userInfo?.subTitle}</h3>
               </div>
               <div className="text">
-                <p>I am passionate Senior Designer, and I'm very passionate and dedicated to my work. With 7 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success.</p>
+                <p>{userInfo?.description}</p>
               </div>
               <div className="signature">
                 <img src={sign} alt="" />

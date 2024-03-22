@@ -8,7 +8,9 @@ import instagram from '../img/svg/social/instagram.svg'
 import dribbble from '../img/svg/social/dribbble.svg'
 import tiktok from '../img/svg/social/tik-tok.svg'
 
+
 function Copyright() {
+
   return (
 <div class="ryker_tm_section">
 		<div class="ryker_tm_copyright">
@@ -17,7 +19,7 @@ function Copyright() {
 					<div class="text" >
 						<p>Copyright &copy; 2021. All rights are reserved</p>
 					</div>
-					<div class="social" data-wow-duration="1.5s">
+					<div class="social" >
 						<ul>
 							<li><a href="#"><img class="svg" src={facebook} alt="" /></a></li>
 							<li><a href="#"><img class="svg" src={twitter} alt="" /></a></li>

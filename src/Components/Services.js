@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../css/colors.css';
 import '../css/plugins.css';
 import '../css/style.css';
@@ -6,8 +6,13 @@ import design from '../img/svg/design.svg'
 import code from '../img/svg/code.svg'
 import award from '../img/svg/award.svg'
 import tools from '../img/svg/tools.svg'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Services() {
+	useEffect(()=>{
+		AOS.init({duration:1000})
+	  },[])
   return (
     <div class="ryker_tm_section" id="service">
 		<div class="ryker_tm_services">
@@ -36,7 +41,7 @@ function Services() {
 							</div>
 						</div>
 					</div>
-					<div class="right">
+					<div class="right" data-aos="fade-up">
 						<ul class="grid">
 							<li class="grid-item wow fadeInUp" data-wow-duration="1.5s">
 								<div class="list_inner">
