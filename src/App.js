@@ -13,6 +13,7 @@ import Video from "./Components/Video";
 import Testimonials from "./Components/Testimonials";
 import News from "./Components/News";
 import Contact from "./Components/Contact";
+import Copyright from "./Components/Copyright";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Testimonials/>
       <News/>
       <Contact/>
+      <Copyright/>
       </div>
       {/* Wrapper All */}
     </div>
