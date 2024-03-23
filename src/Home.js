@@ -18,11 +18,6 @@ import Copyright from "./Components/Copyright";
 function Home() {
   return (
     <div>
-{/* preloader  	 */}
-      {/* <div id="preloader">
-        <div className="loader_line"></div>
-      </div> */}
-      {/* preloader */}
       {/* Wrapper All */}
       <div class="ryker_tm_all_wrap" data-magic-cursor="show" data-color="brown"> 
       <Settings/>
